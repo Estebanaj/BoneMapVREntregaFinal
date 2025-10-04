@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.XR;
-using UnityEngine.UI; // Para trabajar con UI
+using UnityEngine.UI;
 
 public class MenuManagerVR : MonoBehaviour
 {
@@ -13,10 +13,14 @@ public class MenuManagerVR : MonoBehaviour
     public GameObject CanvasMenuConfiguracion;
     public GameObject CanvasMenuCreditos;
 
-    [Header("Escenario (Menú/Pausa)")]
-    public GameObject EscenarioMenu;   // "EscenarioMenu" (se usa tanto para el menú como para la pausa)
-    public GameObject EscenarioModoLibre;  // "EscenarioModoLibre"
-    public GameObject Modelos;         // "Modelos"
+    [Header("Escenarios del juego")]
+    public GameObject EscenarioMenu;                     // 🔸 Este nunca se apaga
+    public GameObject EscenarioPrincipal;
+    public GameObject EscenarioPrincipalColumna;
+    public GameObject EscenarioPrincipalCraneo;
+    public GameObject EscenarioPrincipalEscapula;
+    public GameObject EscenarioPrincipalPiernas;
+    public GameObject EscenarioPrincipalBrazos;
 
     [Header("Opcional: Cámara del jugador (para MenuPositioner)")]
     public Transform playerCamera;
@@ -25,56 +29,68 @@ public class MenuManagerVR : MonoBehaviour
     public bool usarBotonMenuIzquierdo = true;
     private bool menuBtnPrev = false;
 
-    // Coordenadas y rotaciones
-    public Vector3 habitacionMenuPausa = new Vector3(11.4f, 0.158f, 9.821f); // Usamos la misma coordenada para el menú/pausa
+    // ---------------- POSICIONES ----------------
+    public Vector3 habitacionMenuPausa = new Vector3(11.4f, 0.158f, 9.821f);
     public Vector3 habitacionModoLibre = new Vector3(0.362f, 0.158f, 13.115f);
-    public Quaternion rotacionMenuPausa = Quaternion.Euler(0, 0, 0);  // Usamos la misma rotación para el menú/pausa
+    public Quaternion rotacionMenuPausa = Quaternion.Euler(0, 0, 0);
     public Quaternion rotacionModoLibre = Quaternion.Euler(0, 180, 0);
 
-    // Referencia al XR Rig
-    public GameObject XRrig;
+    // Nuevos modos
+    public Vector3 habitacionColumna = new Vector3(23.735f, 0.158f, -5.671f);
+    public Quaternion rotacionColumna = new Quaternion(0f, 0.7071068f, 0f, 0.7071068f);
 
-    // Botones de UI
+    public Vector3 habitacionCraneo = new Vector3(23.735f, 0.158f, 11.472f);
+    public Quaternion rotacionCraneo = new Quaternion(0f, 0.7071068f, 0f, 0.7071068f);
+
+    public Vector3 habitacionEscapula = new Vector3(23.735f, 0.158f, 28.443f);
+    public Quaternion rotacionEscapula = new Quaternion(0f, 0.7071068f, 0f, 0.7071068f);
+
+    public Vector3 habitacionPiernas = new Vector3(-13.83f, 0.158f, 11.12f);
+    public Quaternion rotacionPiernas = new Quaternion(0f, 0.7071068f, 0f, 0.7071068f);
+
+    public Vector3 habitacionBrazos = new Vector3(-14.13f, 0.158f, -4.32f);
+    public Quaternion rotacionBrazos = new Quaternion(0f, 0.7071068f, 0f, 0.7071068f);
+
+    // ---------------- REFERENCIAS ----------------
+    public GameObject XRrig;
     public Button botonModoLibre;
     public Button botonSalir;
 
-    // Nueva variable para controlar si estamos en "modo libre" y si estamos en "partida activa"
-    private bool enModoLibre = false;
+    // ---------------- ESTADOS ----------------
     private bool enPartida = false;
+    private bool enModoLibre = false;
+    private bool enModoColumna = false;
+    private bool enModoCraneo = false;
+    private bool enModoEscapula = false;
+    private bool enModoPiernas = false;
+    private bool enModoBrazos = false;
 
     void Start()
     {
-        // Asegúrate de que los botones estén conectados y añade el listener para el click
-        if (botonModoLibre != null)
-        {
-            botonModoLibre.onClick.AddListener(IrAModoLibre);
-        }
+        // 🔹 Apagar todos los escenarios excepto el menú (que nunca se apaga)
+        ApagarTodosLosEscenarios();
+        if (EscenarioMenu) EscenarioMenu.SetActive(true);
 
+        // 🔹 Configurar botones
+        if (botonModoLibre != null)
+            botonModoLibre.onClick.AddListener(IrAModoLibre);
         if (botonSalir != null)
-        {
             botonSalir.onClick.AddListener(IrAPausa);
-        }
     }
 
     void Update()
     {
         if (!usarBotonMenuIzquierdo) return;
 
-        // Botón "tres rayas" mando izquierdo
         var left = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
         if (left.isValid && left.TryGetFeatureValue(CommonUsages.menuButton, out bool pressed))
         {
             if (pressed && !menuBtnPrev)
             {
-                // Solo abre el menú si estamos en "modo libre"
                 if (enPartida)
-                {
                     AbrirMenuPausaDesdeControl();
-                }
                 else
-                {
                     ToggleMenuPausa();
-                }
             }
             menuBtnPrev = pressed;
         }
@@ -85,6 +101,46 @@ public class MenuManagerVR : MonoBehaviour
 #endif
     }
 
+    // ---------------- ESCENARIOS ----------------
+    void ApagarTodosLosEscenarios()
+    {
+        // ⚠️ EscenarioMenu nunca se apaga
+        if (EscenarioPrincipal) EscenarioPrincipal.SetActive(false);
+        if (EscenarioPrincipalColumna) EscenarioPrincipalColumna.SetActive(false);
+        if (EscenarioPrincipalCraneo) EscenarioPrincipalCraneo.SetActive(false);
+        if (EscenarioPrincipalEscapula) EscenarioPrincipalEscapula.SetActive(false);
+        if (EscenarioPrincipalPiernas) EscenarioPrincipalPiernas.SetActive(false);
+        if (EscenarioPrincipalBrazos) EscenarioPrincipalBrazos.SetActive(false);
+    }
+
+    void ActivarEscenario(GameObject escenario)
+    {
+        // Apagar los escenarios principales, pero sin tocar EscenarioMenu
+        if (EscenarioPrincipal) EscenarioPrincipal.SetActive(false);
+        if (EscenarioPrincipalColumna) EscenarioPrincipalColumna.SetActive(false);
+        if (EscenarioPrincipalCraneo) EscenarioPrincipalCraneo.SetActive(false);
+        if (EscenarioPrincipalEscapula) EscenarioPrincipalEscapula.SetActive(false);
+        if (EscenarioPrincipalPiernas) EscenarioPrincipalPiernas.SetActive(false);
+        if (EscenarioPrincipalBrazos) EscenarioPrincipalBrazos.SetActive(false);
+
+        // 🔹 Asegurar que EscenarioMenu SIEMPRE permanezca encendido
+        if (EscenarioMenu && !EscenarioMenu.activeSelf)
+            EscenarioMenu.SetActive(true);
+
+        // 🔹 Activar el escenario correspondiente
+        if (escenario)
+        {
+            escenario.SetActive(true);
+            Debug.Log($"[MenuManagerVR] Activando escenario: {escenario.name}");
+        }
+        else
+        {
+            Debug.LogWarning("[MenuManagerVR] Escenario no asignado o nulo.");
+        }
+    }
+
+
+    // ---------------- CANVAS ----------------
     void OcultarTodosLosCanvas()
     {
         if (CanvasMenuAprendizaje) CanvasMenuAprendizaje.SetActive(false);
@@ -93,37 +149,87 @@ public class MenuManagerVR : MonoBehaviour
         if (CanvasMenuRegionQuiz) CanvasMenuRegionQuiz.SetActive(false);
         if (CanvasMenuConfiguracion) CanvasMenuConfiguracion.SetActive(false);
         if (CanvasMenuCreditos) CanvasMenuCreditos.SetActive(false);
-        if (CanvasMenuPrincipal) CanvasMenuPrincipal.SetActive(true); // siempre activo
+        if (CanvasMenuPrincipal) CanvasMenuPrincipal.SetActive(true);
     }
 
-    // ---------------- Método para teletransportarse ----------------
-    void Teletransportarse(Vector3 nuevaPosicion, Quaternion nuevaRotacion)
+    void Teletransportarse(Vector3 nuevaPos, Quaternion nuevaRot)
     {
-        XRrig.transform.position = nuevaPosicion;
-        XRrig.transform.rotation = nuevaRotacion;
+        XRrig.transform.position = nuevaPos;
+        XRrig.transform.rotation = nuevaRot;
     }
 
-    // ---------------- Modo Libre (UI) ----------------
+    void ResetModos()
+    {
+        enModoLibre = false;
+        enModoColumna = false;
+        enModoCraneo = false;
+        enModoEscapula = false;
+        enModoPiernas = false;
+        enModoBrazos = false;
+    }
+
+    // ---------------- MODOS ----------------
     public void IrAModoLibre()
     {
+        ResetModos();
+        ActivarEscenario(EscenarioPrincipal);
         Teletransportarse(habitacionModoLibre, rotacionModoLibre);
-        enModoLibre = true;  // Marcamos que estamos en modo libre
-        enPartida = true;  // Activamos la partida
+        enModoLibre = true;
+        enPartida = true;
     }
 
-    // ---------------- Pausa (toggle) ----------------
+    public void IrAModoColumna()
+    {
+        ResetModos();
+        ActivarEscenario(EscenarioPrincipalColumna);
+        Teletransportarse(habitacionColumna, rotacionColumna);
+        enModoColumna = true;
+        enPartida = true;
+    }
+
+    public void IrAModoCraneo()
+    {
+        ResetModos();
+        ActivarEscenario(EscenarioPrincipalCraneo);
+        Teletransportarse(habitacionCraneo, rotacionCraneo);
+        enModoCraneo = true;
+        enPartida = true;
+    }
+
+    public void IrAModoEscapula()
+    {
+        ResetModos();
+        ActivarEscenario(EscenarioPrincipalEscapula);
+        Teletransportarse(habitacionEscapula, rotacionEscapula);
+        enModoEscapula = true;
+        enPartida = true;
+    }
+
+    public void IrAModoPiernas()
+    {
+        ResetModos();
+        ActivarEscenario(EscenarioPrincipalPiernas);
+        Teletransportarse(habitacionPiernas, rotacionPiernas);
+        enModoPiernas = true;
+        enPartida = true;
+    }
+
+    public void IrAModoBrazos()
+    {
+        ResetModos();
+        ActivarEscenario(EscenarioPrincipalBrazos);
+        Teletransportarse(habitacionBrazos, rotacionBrazos);
+        enModoBrazos = true;
+        enPartida = true;
+    }
+
+    // ---------------- PAUSA ----------------
     public void ToggleMenuPausa()
     {
         if (CanvasMenuPausa != null && CanvasMenuPausa.activeSelf)
-        {
-            // Si ya está activo → reanudar
             Reanudar();
-        }
         else
-        {
-            // Si no está activo → abrir pausa
             AbrirMenuPausaDesdeControl();
-        }
     }
 
     public void AbrirMenuPausaDesdeControl()
@@ -131,98 +237,100 @@ public class MenuManagerVR : MonoBehaviour
         OcultarTodosLosCanvas();
         if (CanvasMenuPausa) CanvasMenuPausa.SetActive(true);
         Teletransportarse(habitacionMenuPausa, rotacionMenuPausa);
-        enModoLibre = false;  // Marcamos que estamos en el menú/pausa
-        enPartida = true;  // Mantenemos la partida activa, ya que solo estamos en pausa
+        enPartida = true;
     }
 
     public void Reanudar()
     {
-        // Ahora solo te teletransporta a modo libre sin volver al menú
-        Teletransportarse(habitacionModoLibre, rotacionModoLibre);
-        enModoLibre = true;  // Aseguramos que estemos en modo libre
-        enPartida = true;  // Aseguramos que la partida sigue activa
+        if (CanvasMenuPausa)
+            CanvasMenuPausa.SetActive(false);
+
+        if (enModoLibre)
+            Teletransportarse(habitacionModoLibre, rotacionModoLibre);
+        else if (enModoColumna)
+            Teletransportarse(habitacionColumna, rotacionColumna);
+        else if (enModoCraneo)
+            Teletransportarse(habitacionCraneo, rotacionCraneo);
+        else if (enModoEscapula)
+            Teletransportarse(habitacionEscapula, rotacionEscapula);
+        else if (enModoPiernas)
+            Teletransportarse(habitacionPiernas, rotacionPiernas);
+        else if (enModoBrazos)
+            Teletransportarse(habitacionBrazos, rotacionBrazos);
+        else
+            Teletransportarse(habitacionMenuPausa, rotacionMenuPausa);
+
+        enPartida = true;
     }
 
-    // ---------------- Método para ir a pausa ----------------
+    // ---------------- SALIR Y MENÚ ----------------
     public void IrAPausa()
     {
         Teletransportarse(habitacionMenuPausa, rotacionMenuPausa);
-        enModoLibre = false;  // Aseguramos que estemos en pausa, no en modo libre
-        enPartida = false;  // Aseguramos que no estamos en partida
+        ResetModos();
+        ApagarTodosLosEscenarios();
+        // EscenarioMenu nunca se apaga, por lo tanto no lo tocamos
+        enPartida = false;
     }
 
-    // ---------------- **Salir de la partida** ----------------
     public void SalirDePartida()
     {
-        // Cerrar el Canvas de pausa y abrir el Canvas principal
-        if (CanvasMenuPausa) CanvasMenuPausa.SetActive(false);  // Cierra el menú de pausa
-        if (CanvasMenuPrincipal) CanvasMenuPrincipal.SetActive(true);  // Muestra el menú principal
-        enPartida = false;  // Marcamos que no estamos en partida activa
-        Debug.Log("Saliendo de la partida: Cierra el menú de pausa y abre el principal.");
+        if (CanvasMenuPausa) CanvasMenuPausa.SetActive(false);
+        ApagarTodosLosEscenarios();
+        // EscenarioMenu sigue activo
+        if (CanvasMenuPrincipal) CanvasMenuPrincipal.SetActive(true);
+        enPartida = false;
+        ResetModos();
+        Debug.Log("Saliendo de la partida y regresando al menú.");
     }
 
-    // ---------------- **Salir del juego** ----------------
     public void SalirDelJuego()
     {
         Application.Quit();
         Debug.Log("Saliendo del juego...");
     }
 
-    // ---------------- Métodos para activar los menús ----------------
+    // ---------------- MENÚS ----------------
     public void AbrirMenuAprendizaje() => ActivarSoloCanvas(CanvasMenuAprendizaje);
     public void AbrirMenuConfiguracion() => ActivarSoloCanvas(CanvasMenuConfiguracion);
     public void AbrirMenuCreditos() => ActivarSoloCanvas(CanvasMenuCreditos);
     public void AbrirMenuRegionTutorial() => ActivarSoloCanvas(CanvasMenuRegionTutorial);
     public void AbrirMenuRegionQuiz() => ActivarSoloCanvas(CanvasMenuRegionQuiz);
 
-    // ---------------- Volver al Menú Principal ----------------
     public void VolverAlMenuPrincipal()
     {
         ActivarSoloCanvas(CanvasMenuPrincipal);
-        if (EscenarioMenu) EscenarioMenu.SetActive(true); // Siempre está activo
+        // EscenarioMenu siempre está activo
     }
 
-    // ---------------- Volver de Configuración ----------------
     public void VolverDeConfiguracion()
     {
-        Debug.Log("Volver de Configuración, enPartida: " + enPartida); // Depuración
-
-        if (enPartida) // Si estamos en partida, volver al menú de pausa
-        {
-            Debug.Log("Volviendo al menú de pausa desde configuración"); // Depuración
-            AbrirMenuPausaDesdeControl();
-        }
-        else
-        {
-            // Si no estamos en partida, volver al menú principal
-            Debug.Log("Volviendo al menú principal desde configuración"); // Depuración
-            ActivarSoloCanvas(CanvasMenuPrincipal);  // Regresamos al Canvas del menú principal
-        }
+        if (enPartida) AbrirMenuPausaDesdeControl();
+        else ActivarSoloCanvas(CanvasMenuPrincipal);
     }
 
-    // ---------------- Volver de Créditos ----------------
     public void VolverDeCreditos()
     {
-        Debug.Log("Volver de Créditos, enPartida: " + enPartida); // Depuración
-
-        if (enPartida) // Si estamos en partida, volver al menú de pausa
-        {
-            Debug.Log("Volviendo al menú de pausa desde créditos"); // Depuración
-            AbrirMenuPausaDesdeControl();
-        }
-        else
-        {
-            // Si no estamos en partida, volver al menú principal
-            Debug.Log("Volviendo al menú principal desde créditos"); // Depuración
-            ActivarSoloCanvas(CanvasMenuPrincipal);  // Regresamos al Canvas del menú principal
-        }
+        if (enPartida) AbrirMenuPausaDesdeControl();
+        else ActivarSoloCanvas(CanvasMenuPrincipal);
     }
 
+    public void VolverDeRegionQuiz()
+    {
+        if (enPartida) AbrirMenuPausaDesdeControl();
+        else ActivarSoloCanvas(CanvasMenuPrincipal);
+    }
 
-    // ---------------- Función para activar solo un Canvas ----------------
-    void ActivarSoloCanvas(GameObject canvasActivo)
+    public void VolverDeRegionTutorial()
+    {
+        if (enPartida) AbrirMenuPausaDesdeControl();
+        else ActivarSoloCanvas(CanvasMenuPrincipal);
+    }
+
+    // ---------------- AUXILIAR ----------------
+    void ActivarSoloCanvas(GameObject canvas)
     {
         OcultarTodosLosCanvas();
-        if (canvasActivo) canvasActivo.SetActive(true);
+        if (canvas) canvas.SetActive(true);
     }
 }

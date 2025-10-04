@@ -2,8 +2,7 @@
 // Úsalo JUNTO al XRSocketInteractor en cada objeto "... _Fantasma".
 // - Quita el hover azul del socket.
 // - Hover VERDE si coincide y está encima (dentro de hoverDistance).
-// - Hover ROJO si NO coincide y está encima.
-// - Sin color cuando el socket está ocupado o el objeto está lejos.
+// - Sin color cuando no coincide, el socket está ocupado o el objeto está lejos.
 // - Cancela selección y rebota si intentan encajar uno incorrecto (opcional).
 
 using System;
@@ -13,7 +12,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-namespace BoneMapVR   // <- puedes cambiarlo si quieres
+namespace BoneMapVR
 {
     [RequireComponent(typeof(XRSocketInteractor))]
     public class InteraktorHuesosQuetzal : MonoBehaviour
@@ -23,7 +22,6 @@ namespace BoneMapVR   // <- puedes cambiarlo si quieres
 
         [Header("Feedback de color (sobre el FANTASMA)")]
         public Color matchColor = Color.green; // coincide -> verde
-        public Color mismatchColor = Color.red;   // no coincide -> rojo
 
         [Header("Rechazo (opcional)")]
         [Tooltip("Impulso aplicado al objeto incorrecto al intentar encajar (0 = sin rebote).")]
@@ -85,7 +83,12 @@ namespace BoneMapVR   // <- puedes cambiarlo si quieres
             }
 
             bool isMatch = Matches(t);
-            TintGhost(isMatch ? matchColor : mismatchColor);
+
+            // Solo pintamos si coincide
+            if (isMatch)
+                TintGhost(matchColor);
+            else
+                RestoreGhostTint();
         }
 
         void OnHoverExited(HoverExitEventArgs args)
@@ -119,7 +122,6 @@ namespace BoneMapVR   // <- puedes cambiarlo si quieres
         static string InferBaseName(string socketName)
         {
             var n = socketName.Replace("(Clone)", "", StringComparison.OrdinalIgnoreCase).Trim();
-            // Quita el sufijo "_Fantasma" tolerando espacios: "Nombre ... _Fantasma"
             n = Regex.Replace(n, @"\s*_Fantasma\s*$", "", RegexOptions.IgnoreCase);
             return n.Trim();
         }
