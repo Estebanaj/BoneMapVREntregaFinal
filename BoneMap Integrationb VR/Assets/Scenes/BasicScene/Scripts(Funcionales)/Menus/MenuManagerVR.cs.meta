@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: c8cd51b3d0c2a4b49af11010991f9f3f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - CanvasMenuPrincipal: {instanceID: 0}
+  - CanvasMenuAprendizaje: {instanceID: 0}
+  - CanvasMenuPausa: {instanceID: 0}
+  - CanvasMenuRegionTutorial: {instanceID: 0}
+  - CanvasMenuRegionQuiz: {instanceID: 0}
+  - CanvasMenuConfiguracion: {instanceID: 0}
+  - CanvasMenuCreditos: {instanceID: 0}
+  - EscenarioMenu: {instanceID: 0}
+  - EscenarioModoLibre: {instanceID: 0}
+  - Modelos: {instanceID: 0}
+  - playerCamera: {instanceID: 0}
+  - XRrig: {instanceID: 0}
+  - botonModoLibre: {instanceID: 0}
+  - botonSalir: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
