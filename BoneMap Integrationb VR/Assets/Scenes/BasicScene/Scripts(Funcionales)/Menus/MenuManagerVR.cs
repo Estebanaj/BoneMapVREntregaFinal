@@ -9,7 +9,6 @@ public class MenuManagerVR : MonoBehaviour
     public GameObject CanvasMenuAprendizaje;
     public GameObject CanvasMenuPausa;
     public GameObject CanvasMenuRegionTutorial;
-    public GameObject CanvasMenuRegionQuiz;
     public GameObject CanvasMenuConfiguracion;
     public GameObject CanvasMenuCreditos;
 
@@ -146,7 +145,6 @@ public class MenuManagerVR : MonoBehaviour
         if (CanvasMenuAprendizaje) CanvasMenuAprendizaje.SetActive(false);
         if (CanvasMenuPausa) CanvasMenuPausa.SetActive(false);
         if (CanvasMenuRegionTutorial) CanvasMenuRegionTutorial.SetActive(false);
-        if (CanvasMenuRegionQuiz) CanvasMenuRegionQuiz.SetActive(false);
         if (CanvasMenuConfiguracion) CanvasMenuConfiguracion.SetActive(false);
         if (CanvasMenuCreditos) CanvasMenuCreditos.SetActive(false);
         if (CanvasMenuPrincipal) CanvasMenuPrincipal.SetActive(true);
@@ -273,15 +271,40 @@ public class MenuManagerVR : MonoBehaviour
         enPartida = false;
     }
 
+    // ---------------- SALIR Y MENÚ ----------------
     public void SalirDePartida()
     {
         if (CanvasMenuPausa) CanvasMenuPausa.SetActive(false);
+
+        // 🔹 Antes de apagar los escenarios, reseteamos los objetos
+        ResetearObjetosDeEscenario();
+
+        // 🔹 Apagamos todos los escenarios excepto el menú
         ApagarTodosLosEscenarios();
-        // EscenarioMenu sigue activo
+        if (EscenarioMenu) EscenarioMenu.SetActive(true);
+
+        // 🔹 Activamos el menú principal
         if (CanvasMenuPrincipal) CanvasMenuPrincipal.SetActive(true);
+
+        // 🔹 Reseteamos flags
         enPartida = false;
         ResetModos();
-        Debug.Log("Saliendo de la partida y regresando al menú.");
+
+        Debug.Log("Saliendo de la partida: objetos reestablecidos y regreso al menú principal.");
+    }
+
+    // ---------------- RESETEO DE OBJETOS ----------------
+    void ResetearObjetosDeEscenario()
+    {
+        // Busca todos los objetos activos o inactivos con el script ResettableObject
+        ResettableObject[] objetos = FindObjectsOfType<ResettableObject>(true); // true = incluye desactivados
+
+        foreach (ResettableObject obj in objetos)
+        {
+            obj.ResetTransform();
+        }
+
+        Debug.Log($"🔄 Se reestablecieron {objetos.Length} objetos a su posición original.");
     }
 
     public void SalirDelJuego()
@@ -295,7 +318,6 @@ public class MenuManagerVR : MonoBehaviour
     public void AbrirMenuConfiguracion() => ActivarSoloCanvas(CanvasMenuConfiguracion);
     public void AbrirMenuCreditos() => ActivarSoloCanvas(CanvasMenuCreditos);
     public void AbrirMenuRegionTutorial() => ActivarSoloCanvas(CanvasMenuRegionTutorial);
-    public void AbrirMenuRegionQuiz() => ActivarSoloCanvas(CanvasMenuRegionQuiz);
 
     public void VolverAlMenuPrincipal()
     {
@@ -315,11 +337,7 @@ public class MenuManagerVR : MonoBehaviour
         else ActivarSoloCanvas(CanvasMenuPrincipal);
     }
 
-    public void VolverDeRegionQuiz()
-    {
-        if (enPartida) AbrirMenuPausaDesdeControl();
-        else ActivarSoloCanvas(CanvasMenuPrincipal);
-    }
+
 
     public void VolverDeRegionTutorial()
     {
