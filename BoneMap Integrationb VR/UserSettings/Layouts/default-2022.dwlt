@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 53
+  controlID: 16
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 54
+  controlID: 17
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 55
+  controlID: 18
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 423
     height: 939
-  m_MinSize: {x: 276, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -347,7 +347,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -416,20 +416,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: fe7c0000
-      m_LastClickedID: 31998
-      m_ExpandedIDs: c4bfffff3edfffff7efaffff24fbffffe67b0000008d0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: f8cefeff70dafeffdcdcfeffe4e1feff720dffff9430ffff4043ffff64a3ffff76b5ffff5eb6ffff98b6ffffc8bfffff54ccffff24fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: EscenarioPrincipalColumna
-        m_OriginalName: EscenarioPrincipalColumna
+        m_Name: Numero
+        m_OriginalName: Numero
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 33228
+        m_UserData: -80982
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -798,9 +798,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 11.813869, y: 1.4391932, z: 11.422056}
+    m_Target: {x: 24.015984, y: 2.2464557, z: -8.349698}
     speed: 2
-    m_Value: {x: 11.813869, y: 1.4391932, z: 11.422056}
+    m_Value: {x: 24.015984, y: 2.2464557, z: -8.349697}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -846,13 +846,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.018832307, y: -0.7487638, z: -0.021389546, w: -0.6623255}
+    m_Target: {x: -0.0344112, y: -0.92964804, z: 0.089469284, w: -0.35597822}
     speed: 2
-    m_Value: {x: 0.01883104, y: -0.74871343, z: -0.021388108, w: -0.662281}
+    m_Value: {x: -0.034805954, y: -0.9299736, z: 0.09090898, w: -0.35450408}
   m_Size:
-    m_Target: 0.25497156
+    m_Target: 54.997906
     speed: 2
-    m_Value: 0.25497156
+    m_Value: 52.629574
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -922,7 +922,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Esqueleto
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -930,17 +930,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Esqueleto
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Documents\GitHub\BoneMapVREntregaFinal\BoneMap Integrationb
     VR
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ecd50000
-    m_LastClickedID: 54764
-    m_ExpandedIDs: 000000008ad500008cd500008ed5000006d600005ec4020000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 76d60000
+    m_LastClickedID: 54902
+    m_ExpandedIDs: 0000000076d6000078d600007ad600007cd600007ed6000080d60000b6d6000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -968,7 +968,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008ad500008cd500008ed50000
+    m_ExpandedIDs: 0000000076d6000078d600007ad600007cd600007ed6000080d60000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -996,21 +996,21 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000207f0000b47f00000000000028940000be780000c87e0000ae78000006ab0000a8320100a4020000989f0000d2b10000
+    m_ExpandedInstanceIDs: c6230000207f0000b47f000028940000be780000c87e0000ae78000006ab0000a8320100a4020000989f0000d2b10000b2b2000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Fantasmas
-      m_OriginalName: Fantasmas
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -235502
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
