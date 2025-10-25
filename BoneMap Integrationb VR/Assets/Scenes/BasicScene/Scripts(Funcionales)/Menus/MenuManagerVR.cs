@@ -279,6 +279,9 @@ public class MenuManagerVR : MonoBehaviour
         // 🔹 Antes de apagar los escenarios, reseteamos los objetos
         ResetearObjetosDeEscenario();
 
+        // 🔹 Reiniciamos los menús de aprendizaje
+        ReiniciarMenusDeAprendizaje();
+
         // 🔹 Apagamos todos los escenarios excepto el menú
         ApagarTodosLosEscenarios();
         if (EscenarioMenu) EscenarioMenu.SetActive(true);
@@ -291,6 +294,24 @@ public class MenuManagerVR : MonoBehaviour
         ResetModos();
 
         Debug.Log("Saliendo de la partida: objetos reestablecidos y regreso al menú principal.");
+    }
+
+
+    // ---------------- REINICIO DE MENÚS ----------------
+    private void ReiniciarMenusDeAprendizaje()
+    {
+        // Reinicia el menú de la columna (si está presente)
+        MenuColumnaController menuColumna = FindObjectOfType<MenuColumnaController>();
+        if (menuColumna != null)
+        {
+            menuColumna.ResetMenu();
+            Debug.Log("MenuColumna reiniciado al Paso 1.");
+        }
+
+        // En el futuro aquí puedes añadir otros menús (Craneo, Escapula, etc.)
+        // Ejemplo:
+        // MenuCraneoController menuCraneo = FindObjectOfType<MenuCraneoController>();
+        // if (menuCraneo != null) menuCraneo.ResetMenu();
     }
 
     // ---------------- RESETEO DE OBJETOS ----------------
