@@ -308,11 +308,39 @@ public class MenuManagerVR : MonoBehaviour
             Debug.Log("MenuColumna reiniciado al Paso 1.");
         }
 
-        // En el futuro aquí puedes añadir otros menús (Craneo, Escapula, etc.)
-        // Ejemplo:
-        // MenuCraneoController menuCraneo = FindObjectOfType<MenuCraneoController>();
-        // if (menuCraneo != null) menuCraneo.ResetMenu();
+        // Reinicia el menú del cráneo (si está presente)
+        MenuCraneoController menuCraneo = FindObjectOfType<MenuCraneoController>();
+        if (menuCraneo != null)
+        {
+            menuCraneo.ResetMenu();
+            Debug.Log("MenuCraneo reiniciado al Paso 1.");
+        }
+
+        // Reinicia el menú de la escápula o tórax (si está presente)
+        MenuEscapulaController menuEscapula = FindObjectOfType<MenuEscapulaController>();
+        if (menuEscapula != null)
+        {
+            menuEscapula.ResetMenu();
+            Debug.Log("MenuEscapula reiniciado al Paso 1.");
+        }
+
+        // Reinicia el menú de la pierna (si está presente)
+        MenuPiernaController menuPierna = FindObjectOfType<MenuPiernaController>();
+        if (menuPierna != null)
+        {
+            menuPierna.ResetMenu();
+            Debug.Log("MenuPierna reiniciado al Paso 1.");
+        }
+
+        // Reinicia el menú del brazo (si está presente)
+        MenuBrazoController menuBrazo = FindObjectOfType<MenuBrazoController>();
+        if (menuBrazo != null)
+        {
+            menuBrazo.ResetMenu();
+            Debug.Log("MenuBrazo reiniciado al Paso 1.");
+        }
     }
+
 
     // ---------------- RESETEO DE OBJETOS ----------------
     void ResetearObjetosDeEscenario()
