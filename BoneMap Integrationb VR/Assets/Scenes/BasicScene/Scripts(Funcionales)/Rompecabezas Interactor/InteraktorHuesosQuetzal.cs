@@ -36,6 +36,9 @@ namespace BoneMapVR
         struct ColorState { public bool hasBase; public Color baseCol; public bool hasColor; public Color col; }
         readonly Dictionary<Renderer, ColorState> ghostOriginalColors = new Dictionary<Renderer, ColorState>();
 
+        private AudioSource audioSource;  // Variable para el AudioSource
+        public AudioClip encajeSonido;  // Variable pública para el sonido de encaje
+
         void Awake()
         {
             socket = GetComponent<XRSocketInteractor>();
@@ -43,8 +46,11 @@ namespace BoneMapVR
             // Quitar el hover azul por defecto del socket
             socket.showInteractableHoverMeshes = false;
 
-            if (string.IsNullOrWhiteSpace(acceptedName))
+            if (string.IsNullOrWhiteSpace(acceptedName)) 
                 acceptedName = InferBaseName(gameObject.name);
+
+            // Obtener el AudioSource del mismo objeto
+            audioSource = GetComponent<AudioSource>();
 
             // Suscripción (UnityEvents en XRI)
             socket.hoverEntered.AddListener(OnHoverEntered);
@@ -108,7 +114,8 @@ namespace BoneMapVR
                 RestoreGhostTint();
                 return;
             }
-
+            PlayEncajeSonido(); // Reproducir el sonido de encaje
+            RestoreGhostTint();
             // Correcto: encaja y limpiamos color
             RestoreGhostTint();
         }
@@ -186,6 +193,15 @@ namespace BoneMapVR
         {
             var mat = r.sharedMaterial;
             return mat != null && mat.HasProperty(prop);
+        }
+
+        void PlayEncajeSonido()
+        {
+            Debug.Log("Reproduciendo sonido de encaje");
+            if (audioSource != null && encajeSonido != null)
+            {
+                audioSource.PlayOneShot(encajeSonido); // Reproducir el sonido al encajar
+            }
         }
     }
 }
