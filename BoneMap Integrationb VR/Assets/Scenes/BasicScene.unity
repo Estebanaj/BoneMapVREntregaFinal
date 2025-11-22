@@ -38459,7 +38459,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.03, y: 0.129}
-  m_SizeDelta: {x: 0.7, y: 0.4}
+  m_SizeDelta: {x: 0.7, y: 0.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &310262405
 MonoBehaviour:
@@ -167518,7 +167518,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404588912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0481}
+  m_LocalPosition: {x: 0, y: 0, z: -0.048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -167526,8 +167526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.024, y: -0.01}
-  m_SizeDelta: {x: 0.57, y: 0.2}
+  m_AnchoredPosition: {x: 0.024, y: 0.006}
+  m_SizeDelta: {x: 0.55, y: 0.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404588914
 MonoBehaviour:
@@ -178782,7 +178782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0632, y: -0.01}
+  m_AnchoredPosition: {x: 0.0632, y: 0.0272}
   m_SizeDelta: {x: 0.57, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1503844679
@@ -178868,7 +178868,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.09534043, y: -0.0024749935, z: 0.022791028, w: -0.085998826}
+  m_margin: {x: -0.09534043, y: 0.026135355, z: 0.028723031, w: -0.085998826}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -187311,15 +187311,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hecho Por:
-
-    Andy Goat
-
-    Juanfe
-
-    Estebi
-
-    Miguelin Pinguin'
+  m_text: "Hecho Por:\nAndr\xE9s Dar\xEDo Vergara Cano\nJuan Felipe Morales Espitia\nEsteban
+    Altamiranda Julio\nMiguel \xC1ngel Bayona Rivera"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5637a7c1cc6490e458488afd917d6af4, type: 2}
   m_sharedMaterial: {fileID: 6377073918721228607, guid: 5637a7c1cc6490e458488afd917d6af4, type: 2}
@@ -190732,7 +190725,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.0087, y: 0.128}
-  m_SizeDelta: {x: 0.7, y: 0.4}
+  m_SizeDelta: {x: 0.6, y: 0.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1594479954
 MonoBehaviour:

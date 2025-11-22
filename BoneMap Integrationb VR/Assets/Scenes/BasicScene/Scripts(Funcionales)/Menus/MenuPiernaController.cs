@@ -56,101 +56,98 @@ public class MenuPiernaController : MonoBehaviour
     {
         nombres = new string[]
         {
-            "Fémur (L)", "Fémur (R)",
-            "Tibia (L)", "Tibia (R)",
-            "Fíbula (L)", "Fíbula (R)",
-            "Rótula (L)", "Rótula (R)",
-            "Hueso talo (L)", "Hueso talo (R)",
-            "Calcáneo (L)", "Calcáneo (R)",
-            "Hueso navicular (L)", "Hueso navicular (R)",
-            "Hueso cuboide (L)", "Hueso cuboide (R)",
-            "Hueso cuneiforme medial (L)", "Hueso cuneiforme medial (R)",
-            "Hueso cuneiforme intermedio (L)", "Hueso cuneiforme intermedio (R)",
-            "Hueso cuneiforme lateral (L)", "Hueso cuneiforme lateral (R)",
-            "Primer hueso metatarsiano (L)", "Primer hueso metatarsiano (R)",
-            "Segundo hueso metatarsiano (L)", "Segundo hueso metatarsiano (R)",
-            "Tercer hueso metatarsiano (L)", "Tercer hueso metatarsiano (R)",
-            "Cuarto hueso metatarsiano (L)", "Cuarto hueso metatarsiano (R)",
-            "Quinto hueso metatarsiano (L)", "Quinto hueso metatarsiano (R)",
-            "Falange proximal del primer dedo del pie (L)", "Falange proximal del primer dedo del pie (R)",
-            "Falange distal del primer dedo del pie (L)", "Falange distal del primer dedo del pie (R)",
-            "Falange proximal del segundo dedo del pie (L)", "Falange proximal del segundo dedo del pie (R)",
-            "Falange media del segundo dedo del pie (L)", "Falange media del segundo dedo del pie (R)",
-            "Falange distal del segundo dedo del pie (L)", "Falange distal del segundo dedo del pie (R)",
-            "Falange proximal del tercer dedo del pie (L)", "Falange proximal del tercer dedo del pie (R)",
-            "Falange media del tercer dedo del pie (L)", "Falange media del tercer dedo del pie (R)",
-            "Falange distal del tercer dedo del pie (L)", "Falange distal del tercer dedo del pie (R)",
-            "Falange proximal del cuarto dedo del pie (L)", "Falange proximal del cuarto dedo del pie (R)",
-            "Falange media del cuarto dedo del pie (L)", "Falange media del cuarto dedo del pie (R)",
-            "Falange distal del cuarto dedo del pie (L)", "Falange distal del cuarto dedo del pie (R)",
-            "Falange proximal del quinto dedo del pie (L)", "Falange proximal del quinto dedo del pie (R)",
-            "Falange media del quinto dedo del pie (L)", "Falange media del quinto dedo del pie (R)",
-            "Falange distal del quinto dedo del pie (L)", "Falange distal del quinto dedo del pie (R)"
+    "Fíbula (R)", "Hueso cuboide (L)", "Hueso cuboide (R)", "Hueso cuneiforme intermedio (L)",
+    "Hueso cuneiforme intermedio (R)", "Hueso cuneiforme lateral (L)", "Hueso cuneiforme lateral (R)",
+    "Hueso cuneiforme medial (L)", "Hueso cuneiforme medial (R)", "Hueso Fémur (L)", "Hueso Fémur (R)",
+    "Hueso navicular (L)", "Hueso navicular (R)", "Hueso Talo (L)", "Hueso Talo (R)", "Patela (L)",
+    "Patela (R)", "Primer hueso metatarsiano (L)", "Primer hueso metatarsiano (R)",
+    "Quinto hueso metatarsiano (L)", "Quinto hueso metatarsiano (R)", "Segundo hueso metatarsiano (L)",
+    "Segundo hueso metatarsiano (R)", "Tercer hueso metatarsiano (L)", "Tercer hueso metatarsiano (R)",
+    "Tibia (L)", "Tibia (R)", "Fíbula (L)", "Cuarto hueso metatarsiano (L)", "Cuarto hueso metatarsiano (R)",
+    "Falange proximal del cuarto dedo del pie (L)", "Falange proximal del cuarto dedo del pie (R)",
+    "Falange proximal del primer dedo del pie (L)", "Falange proximal del primer dedo del pie (R)",
+    "Falange proximal del quinto dedo del pie (L)", "Falange proximal del quinto dedo del pie (R)",
+    "Falange proximal del segundo dedo del pie (L)", "Falange proximal del segundo dedo del pie (R)",
+    "Falange proximal del tercer dedo del pie (L)", "Falange proximal del tercer dedo del pie (R)",
+    "Falange media del cuarto dedo del pie (L)", "Falange media del cuarto dedo del pie (R)",
+    "Falange media del quinto dedo del pie (L)", "Falange media del quinto dedo del pie (R)",
+    "Falange media del segundo dedo del pie (L)", "Falange media del segundo dedo del pie (R)",
+    "Falange media del tercer dedo del pie (L)", "Falange media del tercer dedo del pie (R)",
+    "Falange distal del cuarto dedo del pie (L)", "Falange distal del cuarto dedo del pie (R)",
+    "Falange distal del primer dedo del pie (L)", "Falange distal del primer dedo del pie (R)",
+    "Falange distal del quinto dedo del pie (L)", "Falange distal del quinto dedo del pie (R)",
+    "Falange distal del segundo dedo del pie (L)", "Falange distal del segundo dedo del pie (R)",
+    "Falange distal del tercer dedo del pie (R)", "Falange distal del tercer dedo del pie (L)",
+    "Calcáneo (L)", "Calcáneo (R)"
         };
+
 
         // (Tu bloque de descripciones completo se mantiene)
         descripciones = new string[]
         {
-    "Hueso más largo y resistente del cuerpo. Conecta la pelvis al esqueleto de la pierna. Su cabeza hemisférica articula con el acetábulo, transmitiendo el peso corporal. El cuello y los trocánteres permiten inserción muscular y movimiento de flexión, extensión y rotación. Su robusta diáfisis soporta cargas y finaliza en cóndilos que forman la articulación de la rodilla.",
-    "Homólogo al izquierdo. Su estructura tubular densa garantiza la estabilidad axial. El cuello forma un ángulo oblicuo que favorece la bipedestación. Los cóndilos medial y lateral se adaptan al platillo tibial, permitiendo desplazamiento suave. Participa en locomoción, absorción de impactos y control postural.",
-    "Hueso largo, medial, situado entre fémur y astrágalo. Su cuerpo triangular y borde anterior subcutáneo conforman la “espinilla”. Soporta el peso corporal y estabiliza la articulación de la rodilla. Presenta cóndilos superiores para el fémur y maléolo medial que refuerza el tobillo.",
-    "Simétrica. Principal eje de carga de la pierna derecha. Sus superficies articulares planas reciben los cóndilos femorales y se unen al peroné lateralmente. Transmite la fuerza vertical al pie. El maléolo medial se proyecta distalmente, formando parte de la mortaja tibioastragalina.",
-    "Hueso delgado y lateral, paralelo a la tibia. No participa significativamente en la carga, pero proporciona inserción a músculos peroneos y ligamentos del tobillo. El extremo distal forma el maléolo lateral, esencial para la estabilidad articular.",
-    "Estructura semejante a la izquierda. Mantiene la integridad del compartimento lateral y equilibra las tensiones de la pierna. Su cabeza proximal se articula con la tibia y el maléolo lateral protege el tobillo derecho.",
-    "Hueso sesamoideo situado en el tendón del cuádriceps. Aumenta la eficiencia mecánica del músculo en la extensión de rodilla. Su cara posterior articula con la tróclea femoral. Protege la articulación anterior y distribuye fuerzas.",
-    "Simétrica. Facilita el deslizamiento entre fémur y tendón rotuliano durante la flexión-extensión. Absorbe tensiones de compresión y mantiene alineación del aparato extensor.",
-    "También llamado astrágalo, transmite el peso corporal desde la tibia hacia el pie. Carece de inserciones musculares, lo que le da gran movilidad. Su tróclea superior articula con tibia y fíbula; el cuello con el navicular; y su cara inferior con el calcáneo. Es pieza clave del tobillo y del equilibrio postural.",
-    "Homólogo del izquierdo. Actúa como eje de la articulación tibiotarsiana, permitiendo flexión plantar y dorsal. Sus superficies articulares lisas distribuyen cargas y amortiguan impactos. Participa en la estabilidad dinámica del arco medial del pie.",
-    "Hueso del talón y el más voluminoso del tarso. Sostiene el peso corporal y sirve de punto de inserción al tendón de Aquiles. Su cara superior se articula con el astrágalo y la anterior con el cuboide. Absorbe impactos durante la marcha y mantiene la curvatura plantar posterior.",
-    "Simétrico, conforma la base posterior del pie derecho. Disipa fuerzas durante la fase de apoyo y facilita la propulsión al caminar. Su tuberosidad posterior es prominente y su estructura esponjosa contribuye a la amortiguación.",
-    "Situado en el lado medial del pie, entre el talo y las cuñas. Su superficie cóncava recibe la cabeza del astrágalo. Posee una tuberosidad palpable que da inserción al tendón tibial posterior. Es esencial en el soporte del arco longitudinal medial.",
-    "Simétrico, estabiliza el mediopié y conecta el astrágalo con los cuneiformes. Su forma de barca distribuye la presión entre los componentes del arco plantar.",
-    "Ubicado en el lado lateral del pie, entre calcáneo y cuarto-quinto metatarsiano. Su surco inferior guía el tendón del peroneo largo. Aporta rigidez lateral y sirve como punto de palanca durante la propulsión.",
-    "Simétrico, forma parte del arco plantar lateral. Estabiliza el borde externo del pie y distribuye fuerzas entre talón y metatarso.",
-    "Más grande de las tres cuñas, se articula con el primer metatarsiano y el navicular. Ayuda al soporte del arco medial del pie y da inserción al tendón tibial anterior.",
-    "Simétrico, estabiliza el primer radio del pie. Su orientación permite movimientos controlados del hallux durante la marcha.",
-    "Entre el medial y el lateral. Se articula con el segundo metatarsiano y el navicular. Su forma en cuña refuerza el arco transversal del pie.",
-    "Simétrico, participa en la transmisión de cargas al eje central del antepié. Proporciona rigidez estructural.",
-    "El más pequeño de las tres cuñas. Conecta el cuboide con el tercer metatarsiano. Contribuye al arco transversal y la estabilidad lateral.",
-    "Simétrico, sirve de base al tercer metatarsiano y equilibra la movilidad del mediopié.",
-    "Corto y robusto, conecta el cuneiforme medial con el hallux. Soporta gran parte del peso durante la propulsión del paso. Su base ancha estabiliza el mediopié y su cabeza articula con la falange proximal del primer dedo. Inserta los músculos peroneo largo y tibial anterior, esenciales para la flexión plantar y dorsal.",
-    "Homólogo al izquierdo. Transmite las fuerzas de impulso hacia el hallux durante la marcha. Su estructura gruesa absorbe la presión axial. Presenta sesamoideos plantares que mejoran la palanca del flexor del dedo gordo.",
-    "El más largo del pie. Articula proximalmente con los tres cuneiformes y distalmente con la segunda falange. Es el eje central del antepié, confiriendo estabilidad al arco transversal. Resiste cargas verticales y limita movimientos excesivos laterales.",
-    "Simétrico, actúa como pivote estructural del pie. Soporta compresión durante el apoyo medio de la marcha. Su base profunda lo hace menos móvil pero más resistente.",
-    "Ubicado entre el segundo y cuarto metatarsiano. Articula con el cuneiforme lateral y las falanges del tercer dedo. Contribuye al equilibrio dinámico y al soporte del arco longitudinal.",
-    "Simétrico, refuerza la estructura central del antepié. Permite flexión y extensión moderadas del tercer dedo.",
-    "Articula con el cuboide y con el quinto metatarsiano. Su base alargada soporta las cargas laterales y proporciona elasticidad en la fase de empuje del paso.",
-    "Simétrico, conecta el cuboide con el cuarto dedo. Participa en la distribución del peso y el movimiento coordinado del pie.",
-    "Presenta una apófisis estiloides prominente donde se inserta el tendón del peroneo corto. Facilita la eversión del pie. Es hueso de palanca durante la propulsión.",
-    "Simétrico, refuerza el borde lateral del pie y participa activamente en la estabilidad del arco externo. Es común sitio de fractura por torsión o impacto.",
-    "Corta y robusta, articula con el primer metatarsiano. Permite flexión plantar y extensión del hallux. Soporta el impulso final durante la marcha y equilibra la carga axial del cuerpo.",
-    "Simétrica. Su base ovalada transmite la fuerza del metatarsiano hacia la falange distal. Participa en la estabilidad del arco medial y la propulsión.",
-    "Hueso pequeño, aplanado, termina en la zona ungueal. Recibe presión directa en el despegue del paso.",
-    "Simétrica, protege la punta del hallux y distribuye la fuerza del impulso.",
-    "Alargada, se articula con el segundo metatarsiano. Permite flexión y extensión.",
-    "Simétrica, eje de movimiento del antepié medio.",
-    "Une la proximal y distal, da estabilidad articular.",
-    "Simétrica, contribuye a la flexión plantar y control digital.",
-    "Pequeña, soporta presión terminal.",
-    "Simétrica, amortigua el contacto con el suelo.",
-    "Articula con el tercer metatarsiano. Proporciona flexibilidad al arco medio.",
-    "Simétrica, controla la elevación del antepié.",
-    "Intermedia, une la proximal y distal.",
-    "Simétrica, facilita la extensión digital.",
-    "Terminal, sostiene la uña y estabiliza el apoyo.",
-    "Simétrica, protege el extremo del dedo.",
-    "Articula con el cuarto metatarsiano. Permite movilidad lateral controlada.",
-    "Simétrica, contribuye al ajuste del arco plantar.",
-    "Une segmentos, mantiene alineación digital.",
-    "Simétrica, ayuda en la flexión plantar.",
-    "Pequeña, estabiliza la punta del dedo.",
-    "Simétrica, distribuye presión al caminar.",
-    "Se articula con el quinto metatarsiano. Da soporte lateral y ayuda en la propulsión.",
-    "Simétrica, mantiene equilibrio del borde externo del pie.",
-    "Segmento intermedio, une falanges.",
-    "Simétrica, colabora en la flexión plantar.",
-    "Pequeña, terminal, protege el extremo del meñique.",
-    "Simétrica, absorbe impactos laterales."
+            "Hueso largo ubicado en la parte lateral de la pierna, entre la rodilla y el tobillo. Actúa como soporte estructural y facilita el movimiento.",
+            "Hueso cuboide ubicado en el pie izquierdo, parte de los huesos del medio pie. Ayuda a proporcionar estabilidad y facilita el movimiento del pie.",
+            "Hueso cuboide ubicado en el pie derecho, parte de los huesos del medio pie. Ayuda a proporcionar estabilidad y facilita el movimiento del pie.",
+            "Hueso cuneiforme intermedio ubicado en el pie izquierdo, una de las tres piezas que forman el medio pie y ayudan a la distribución del peso corporal.",
+            "Hueso cuneiforme intermedio ubicado en el pie derecho, una de las tres piezas que forman el medio pie y ayudan a la distribución del peso corporal.",
+            "Hueso cuneiforme lateral ubicado en el pie izquierdo, contribuye a la estructura del arco del pie y ayuda en la movilidad.",
+            "Hueso cuneiforme lateral ubicado en el pie derecho, contribuye a la estructura del arco del pie y ayuda en la movilidad.",
+            "Hueso cuneiforme medial ubicado en el pie izquierdo, una de las piezas que forman el medio pie y ayudan en la distribución del peso durante el caminar.",
+            "Hueso cuneiforme medial ubicado en el pie derecho, una de las piezas que forman el medio pie y ayudan en la distribución del peso durante el caminar.",
+            "Hueso largo ubicado en la parte superior de la pierna, conecta la pelvis con la rodilla y soporta la mayor parte del peso corporal.",
+            "Hueso largo ubicado en la parte superior de la pierna, conecta la pelvis con la rodilla y soporta la mayor parte del peso corporal.",
+            "Hueso en el pie izquierdo que conecta el tobillo con el pie. Es esencial para el soporte y el movimiento del pie.",
+            "Hueso en el pie derecho que conecta el tobillo con el pie. Es esencial para el soporte y el movimiento del pie.",
+            "Hueso en la parte superior del pie izquierdo, parte de los huesos que conforman la estructura del pie y facilitan el movimiento.",
+            "Hueso en la parte superior del pie derecho, parte de los huesos que conforman la estructura del pie y facilitan el movimiento.",
+            "Hueso talo izquierdo, forma parte de la articulación del tobillo y se encarga de transmitir el peso del cuerpo hacia el pie.",
+            "Hueso talo derecho, forma parte de la articulación del tobillo y se encarga de transmitir el peso del cuerpo hacia el pie.",
+            "Hueso redondeado ubicado en el centro de la rodilla, permite el movimiento de la pierna al facilitar la articulación entre el fémur y la tibia.",
+            "Hueso redondeado ubicado en el centro de la rodilla, permite el movimiento de la pierna al facilitar la articulación entre el fémur y la tibia.",
+            "Hueso metatarsiano en el pie izquierdo, forma parte de la parte media del pie y es importante para la estabilidad y el movimiento.",
+            "Hueso metatarsiano en el pie derecho, forma parte de la parte media del pie y es importante para la estabilidad y el movimiento.",
+            "Hueso metatarsiano en el pie izquierdo, forma parte de la parte media del pie y es importante para la estabilidad y el movimiento.",
+            "Hueso metatarsiano en el pie derecho, forma parte de la parte media del pie y es importante para la estabilidad y el movimiento.",
+            "Hueso metatarsiano en el pie izquierdo, forma parte de la parte media del pie y es importante para la estabilidad y el movimiento.",
+            "Hueso metatarsiano en el pie derecho, forma parte de la parte media del pie y es importante para la estabilidad y el movimiento.",
+            "Hueso metatarsiano en el pie izquierdo, forma parte de la parte media del pie y es importante para la estabilidad y el movimiento.",
+            "Hueso metatarsiano en el pie derecho, forma parte de la parte media del pie y es importante para la estabilidad y el movimiento.",
+            "Hueso largo ubicado en el lado interior de la pierna, forma parte del esqueleto de la pierna y facilita el movimiento.",
+            "Hueso largo ubicado en el lado exterior de la pierna, forma parte del esqueleto de la pierna y facilita el movimiento.",
+            "Hueso metatarsiano en el pie izquierdo, importante para el soporte del cuerpo y la distribución del peso durante la caminata.",
+            "Hueso metatarsiano en el pie derecho, importante para el soporte del cuerpo y la distribución del peso durante la caminata.",
+            "Hueso metatarsiano en el pie izquierdo, importante para el soporte del cuerpo y la distribución del peso durante la caminata.",
+            "Hueso metatarsiano en el pie derecho, importante para el soporte del cuerpo y la distribución del peso durante la caminata.",
+            "Falange proximal del cuarto dedo del pie izquierdo, permite el movimiento del dedo y contribuye a la función de la marcha.",
+            "Falange proximal del cuarto dedo del pie derecho, permite el movimiento del dedo y contribuye a la función de la marcha.",
+            "Falange proximal del primer dedo del pie izquierdo, permite el movimiento del dedo y contribuye a la función de la marcha.",
+            "Falange proximal del primer dedo del pie derecho, permite el movimiento del dedo y contribuye a la función de la marcha.",
+            "Falange proximal del quinto dedo del pie izquierdo, permite el movimiento del dedo y contribuye a la función de la marcha.",
+            "Falange proximal del quinto dedo del pie derecho, permite el movimiento del dedo y contribuye a la función de la marcha.",
+            "Falange proximal del segundo dedo del pie izquierdo, permite el movimiento del dedo y contribuye a la función de la marcha.",
+            "Falange proximal del segundo dedo del pie derecho, permite el movimiento del dedo y contribuye a la función de la marcha.",
+            "Falange proximal del tercer dedo del pie izquierdo, permite el movimiento del dedo y contribuye a la función de la marcha.",
+            "Falange proximal del tercer dedo del pie derecho, permite el movimiento del dedo y contribuye a la función de la marcha.",
+            "Falange media del cuarto dedo del pie izquierdo, contribuye a la flexión y extensión del dedo para la marcha.",
+            "Falange media del cuarto dedo del pie derecho, contribuye a la flexión y extensión del dedo para la marcha.",
+            "Falange media del quinto dedo del pie izquierdo, contribuye a la flexión y extensión del dedo para la marcha.",
+            "Falange media del quinto dedo del pie derecho, contribuye a la flexión y extensión del dedo para la marcha.",
+            "Falange media del segundo dedo del pie izquierdo, contribuye a la flexión y extensión del dedo para la marcha.",
+            "Falange media del segundo dedo del pie derecho, contribuye a la flexión y extensión del dedo para la marcha.",
+            "Falange media del tercer dedo del pie izquierdo, contribuye a la flexión y extensión del dedo para la marcha.",
+            "Falange media del tercer dedo del pie derecho, contribuye a la flexión y extensión del dedo para la marcha.",
+            "Falange distal del cuarto dedo del pie izquierdo, permite la última parte de la flexión y extensión del dedo para la marcha.",
+            "Falange distal del cuarto dedo del pie derecho, permite la última parte de la flexión y extensión del dedo para la marcha.",
+            "Falange distal del primer dedo del pie izquierdo, permite la última parte de la flexión y extensión del dedo para la marcha.",
+            "Falange distal del primer dedo del pie derecho, permite la última parte de la flexión y extensión del dedo para la marcha.",
+            "Falange distal del quinto dedo del pie izquierdo, permite la última parte de la flexión y extensión del dedo para la marcha.",
+            "Falange distal del quinto dedo del pie derecho, permite la última parte de la flexión y extensión del dedo para la marcha.",
+            "Falange distal del segundo dedo del pie izquierdo, permite la última parte de la flexión y extensión del dedo para la marcha.",
+            "Falange distal del segundo dedo del pie derecho, permite la última parte de la flexión y extensión del dedo para la marcha.",
+            "Falange distal del tercer dedo del pie derecho, permite la última parte de la flexión y extensión del dedo para la marcha.",
+            "Falange distal del tercer dedo del pie izquierdo, permite la última parte de la flexión y extensión del dedo para la marcha.",
+            "Hueso del talón izquierdo, el más grande y fuerte de los huesos del pie, esencial para la marcha y el soporte del peso del cuerpo.",
+            "Hueso del talón derecho, el más grande y fuerte de los huesos del pie, esencial para la marcha y el soporte del peso del cuerpo."
         };
 
 
@@ -184,29 +181,30 @@ public class MenuPiernaController : MonoBehaviour
     {
         bool encontrado = false;
 
-        for (int i = 0; i < huesos.Length; i++)
+        // Iteramos sobre el array de nombres
+        for (int i = 0; i < nombres.Length; i++)
         {
-            if (huesos[i].hueso == huesoSeleccionado)
+            // Comparar el nombre del hueso seleccionado con el array de nombres
+            if (nombres[i] == huesoSeleccionado.name)
             {
                 encontrado = true;
 
-                if (i < nombres.Length && i < descripciones.Length)
-                {
-                    if (tituloTexto) tituloTexto.text = nombres[i];
-                    if (descripcionTexto) descripcionTexto.text = descripciones[i];
-                    Debug.Log($"[MenuPiernaController] Mostrando info de: {nombres[i]}");
-                }
-                else
-                {
-                    Debug.LogWarning($"[MenuPiernaController] Índice fuera de rango en {name}: {i}");
-                }
+                // Mostrar el nombre y la descripción correspondiente usando el índice 'i'
+                if (tituloTexto)
+                    tituloTexto.text = nombres[i];  // Muestra el nombre del hueso
 
+                if (descripcionTexto)
+                    descripcionTexto.text = descripciones[i];  // Muestra la descripción correspondiente
+
+                Debug.Log($"[MenuEscapulaController] Mostrando información de: {nombres[i]}");
                 break;
             }
         }
 
         if (!encontrado)
-            Debug.LogWarning($"[MenuPiernaController] El hueso '{huesoSeleccionado.name}' no está en la lista.");
+        {
+            Debug.LogWarning($"[MenuEscapulaController] Hueso no encontrado en la lista: {huesoSeleccionado.name}");
+        }
     }
 
     public void ResetMenu()

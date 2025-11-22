@@ -55,87 +55,82 @@ public class MenuEscapulaController : MonoBehaviour
     private void InicializarDatos()
     {
         nombres = new string[]
-        {
-            "Cartílago costal de la primera costilla (L)", "Cartílago costal de la primera costilla (R)",
-            "Cartílago costal de la segunda costilla (L)", "Cartílago costal de la segunda costilla (R)",
-            "Cartílago costal de la tercera costilla (L)", "Cartílago costal de la tercera costilla (R)",
-            "Cartílago costal de la cuarta costilla (L)", "Cartílago costal de la cuarta costilla (R)",
-            "Cartílago costal de la quinta costilla (L)", "Cartílago costal de la quinta costilla (R)",
-            "Cartílago costal de la sexta costilla (L)", "Cartílago costal de la sexta costilla (R)",
-            "Cartílago costal de la séptima costilla (L)", "Cartílago costal de la séptima costilla (R)",
-            "Cartílago costal de la octava costilla (L)", "Cartílago costal de la octava costilla (R)",
-            "Cartílago costal de la novena costilla (L)", "Cartílago costal de la novena costilla (R)",
-            "Cartílago costal de la décima costilla (L)", "Cartílago costal de la décima costilla (R)",
-            "Clavícula (L)", "Clavícula (R)",
-            "Primera costilla (L)", "Primera costilla (R)",
-            "Segunda costilla (L)", "Segunda costilla (R)",
-            "Tercera costilla (L)", "Tercera costilla (R)",
-            "Cuarta costilla (L)", "Cuarta costilla (R)",
-            "Quinta costilla (L)", "Quinta costilla (R)",
-            "Sexta costilla (L)", "Sexta costilla (R)",
-            "Séptima costilla (L)", "Séptima costilla (R)",
-            "Octava costilla (L)", "Octava costilla (R)",
-            "Novena costilla (L)", "Novena costilla (R)",
-            "Décima costilla (L)", "Décima costilla (R)",
-            "Undécima costilla (L)", "Undécima costilla (R)",
-            "Duodécima costilla (L)", "Duodécima costilla (R)",
-            "Manubrio del esternón", "Cuerpo del esternón", "Proceso xifoides",
-            "Escápula (L)", "Escápula (R)"
-        };
+{
+    "Cartílago costal de la cuarta costilla (L)", "Cartílago costal de la cuarta costilla (R)",
+    "Cartílago costal de la décima costilla (L)", "Cartílago costal de la décima costilla (R)",
+    "Cartílago costal de la novena costilla (L)", "Cartílago costal de la novena costilla (R)",
+    "Cartílago costal de la octava costilla (L)", "Cartílago costal de la octava costilla (R)",
+    "Cartílago costal de la primera costilla (L)", "Cartílago costal de la primera costilla (R)",
+    "Cartílago costal de la quinta costilla (L)", "Cartílago costal de la quinta costilla (R)",
+    "Cartílago costal de la segunda costilla (L)", "Cartílago costal de la segunda costilla (R)",
+    "Cartílago costal de la sexta costilla (L)", "Cartílago costal de la sexta costilla (R)",
+    "Cartílago costal de la séptima costilla (L)", "Cartílago costal de la séptima costilla (R)",
+    "Cartílago costal de la tercera costilla (L)", "Cartílago costal de la tercera costilla (R)",
+    "Clavícula (L)", "Clavícula (R)", "Cuarta costilla (L)", "Cuarta costilla (R)",
+    "Cuerpo del esternón", "Duodécima costilla (L)", "Duodécima costilla (R)", 
+    "Décima costilla (L)", "Décima costilla (R)", "Escápula (L)", "Escápula (R)",
+    "Manubrio del esternón", "Novena costilla (L)", "Novena costilla (R)",
+    "Octava costilla (L)", "Octava costilla (R)", "Primera costilla (L)", "Primera costilla (R)",
+    "Proceso xifoides", "Quinta costilla (L)", "Quinta costilla (R)", "Segunda costilla (L)",
+    "Segunda costilla (R)", "Sexta costilla (L)", "Sexta costilla (R)", "Séptima costilla (L)",
+    "Séptima costilla (R)", "Tercera costilla (L)", "Tercera costilla (R)", "Undécima costilla (L)",
+    "Undécima costilla (R)"
+};
+
 
         descripciones = new string[]
         {
-    "Banda de cartílago hialino que conecta la primera costilla izquierda con el manubrio del esternón. Permite la expansión torácica y actúa como amortiguador entre hueso y esternón.",
-    "Estructura simétrica que une la primera costilla derecha con el esternón. Firme, no segmentado, contribuye a la estabilidad de la caja torácica superior.",
-    "Une la segunda costilla izquierda al ángulo esternal. Favorece la movilidad respiratoria mediante su elasticidad y unión fibrosa.",
-    "Simétrico al izquierdo, sirve de punto anatómico para el conteo costal clínico. Aporta flexibilidad y soporte mecánico al tórax.",
-    "Estructura cartilaginosa elástica que conecta la tercera costilla izquierda con el cuerpo esternal. Permite ligera movilidad y absorbe impactos respiratorios.",
-    "Conecta costilla derecha con el esternón. Participa en el movimiento costal anterior durante la inspiración.",
-    "Une la cuarta costilla izquierda con el esternón, participando en el ensanchamiento del tórax. Su tejido hialino le confiere flexibilidad.",
-    "Simétrico al izquierdo. Facilita el ascenso costal en inspiración y el retorno elástico en espiración.",
-    "Conecta la quinta costilla izquierda con el cuerpo del esternón. Estructura semiflexible esencial en la movilidad respiratoria media.",
-    "Une costilla derecha con el esternón. Absorbe tensiones durante la expansión torácica.",
-    "Une la sexta costilla izquierda con el esternón. Su flexibilidad favorece la ventilación pulmonar.",
-    "Simétrico, une la sexta costilla derecha al esternón. Protege estructuras internas del mediastino.",
-    "Se articula con el extremo inferior del esternón y el cartílago de la sexta costilla, completando el arco costal.",
-    "Simétrico, forma parte del borde costal derecho. Determina el límite inferior del tórax.",
-    "Se une al cartílago de la séptima costilla. Es parte de las costillas falsas, contribuyendo a la elasticidad del arco costal.",
-    "Simétrico, se une indirectamente al esternón a través del cartílago superior.",
-    "Articulación indirecta con el esternón mediante cartílago séptimo. Permite movilidad lateral del tórax.",
-    "Simétrico, contribuye al borde costal derecho y protección hepática.",
-    "Conecta la décima costilla izquierda al arco costal. Termina en unión fibrosa, no esternal.",
-    "Simétrico, articula con novena costilla. Participa en flexión costal inferior.",
-    "Hueso alargado en forma de “S”, une esternón con escápula izquierda. Actúa como puntal que separa el hombro del tórax. Protege vasos subclavios.",
-    "Simétrica, conecta esternón con escápula derecha. Transmite fuerzas del miembro superior al tronco.",
-    "Corta, plana y curva. Se articula con T1 y el manubrio esternal. Protege el plexo braquial y vasos subclavios.",
-    "Simétrica, forma la base torácica superior. Importante en anatomía clínica del cuello.",
-    "Más larga y delgada, con tubérculo de inserción para músculos serratos.",
-    "Simétrica, articulación con T2 y cartílago costal del segundo espacio intercostal.",
-    "Curva y estrecha, contribuye a la expansión torácica.",
-    "Idéntica a la izquierda, participa en la flexión costal.",
-    "De longitud media, curvatura pronunciada. Protege pulmones y grandes vasos.",
-    "Simétrica, conecta con T4 y el esternón.",
-    "Costilla típica, aporta rigidez media y movilidad.",
-    "Simétrica, protege el corazón y arterias mamarias.",
-    "Curva y robusta, punto de inserción muscular torácico.",
-    "Simétrica, delimita el borde pulmonar inferior.",
-    "Última verdadera, conecta directamente con el esternón.",
-    "Simétrica, forma parte del límite torácico inferior.",
-    "Falsa costilla, une su cartílago con el de la séptima.",
-    "Simétrica, contribuye al arco costal.",
-    "Forma parte de las costillas falsas, unida indirectamente al esternón.",
-    "Similar, protege órganos abdominales superiores.",
-    "Flotante o semimóvil, protege riñón izquierdo.",
-    "Equivalente, resguarda el riñón derecho.",
-    "Costilla flotante, sin conexión esternal. Protege órganos abdominales.",
-    "Simétrica, anclaje muscular abdominal posterior.",
-    "Corta, flotante, final de la parrilla costal. Inserta músculos lumbares.",
-    "Simétrica, marca el límite posterior del tórax.",
-    "Porción superior del esternón. Se articula con clavículas y primeras costillas. Protege grandes vasos torácicos.",
-    "Parte media, larga y plana. Conecta con cartílagos costales 2–7. Centro estructural de la caja torácica.",
-    "Extremo inferior del esternón, cartilaginoso en juventud, osificado en adultez. Punto de referencia en RCP y diafragma.",
-    "Hueso plano triangular posterior al tórax. Se articula con clavícula y húmero. Permite movilidad del hombro y anclaje muscular dorsal.",
-    "Simétrica, coordina movimientos escapulohumerales y protege la parrilla costal."
+    "Cartílago costal que conecta la cuarta costilla izquierda con el esternón. Proporciona flexibilidad a la caja torácica para la expansión durante la respiración.",
+    "Cartílago costal que conecta la cuarta costilla derecha con el esternón. Proporciona flexibilidad a la caja torácica para la expansión durante la respiración.",
+    "Cartílago costal que conecta la décima costilla izquierda con el esternón. Facilita la expansión torácica en la respiración.",
+    "Cartílago costal que conecta la décima costilla derecha con el esternón. Facilita la expansión torácica en la respiración.",
+    "Cartílago costal que conecta la novena costilla izquierda con el esternón. Ayuda a la flexibilidad y expansión de la caja torácica.",
+    "Cartílago costal que conecta la novena costilla derecha con el esternón. Ayuda a la flexibilidad y expansión de la caja torácica.",
+    "Cartílago costal que conecta la octava costilla izquierda con el esternón. Facilita la expansión torácica durante la respiración.",
+    "Cartílago costal que conecta la octava costilla derecha con el esternón. Facilita la expansión torácica durante la respiración.",
+    "Cartílago costal que conecta la primera costilla izquierda con el esternón. Proporciona flexibilidad en la caja torácica.",
+    "Cartílago costal que conecta la primera costilla derecha con el esternón. Proporciona flexibilidad en la caja torácica.",
+    "Cartílago costal que conecta la quinta costilla izquierda con el esternón. Ayuda a la flexibilidad de la caja torácica.",
+    "Cartílago costal que conecta la quinta costilla derecha con el esternón. Ayuda a la flexibilidad de la caja torácica.",
+    "Cartílago costal que conecta la segunda costilla izquierda con el esternón. Facilita la flexibilidad torácica.",
+    "Cartílago costal que conecta la segunda costilla derecha con el esternón. Facilita la flexibilidad torácica.",
+    "Cartílago costal que conecta la sexta costilla izquierda con el esternón. Facilita la expansión y flexibilidad torácica.",
+    "Cartílago costal que conecta la sexta costilla derecha con el esternón. Facilita la expansión y flexibilidad torácica.",
+    "Cartílago costal que conecta la séptima costilla izquierda con el esternón. Facilita la flexibilidad torácica.",
+    "Cartílago costal que conecta la séptima costilla derecha con el esternón. Facilita la flexibilidad torácica.",
+    "Cartílago costal que conecta la tercera costilla izquierda con el esternón. Facilita la expansión de la caja torácica.",
+    "Cartílago costal que conecta la tercera costilla derecha con el esternón. Facilita la expansión de la caja torácica.",
+    "Clavícula izquierda. Conecta el esternón con el omóplato, permitiendo el movimiento del brazo.",
+    "Clavícula derecha. Conecta el esternón con el omóplato, permitiendo el movimiento del brazo.",
+    "Cuarta costilla izquierda. Conecta con el esternón y contribuye a la expansión torácica.",
+    "Cuarta costilla derecha. Conecta con el esternón y contribuye a la expansión torácica.",
+    "Cuerpo del esternón. Soporta las costillas y conecta con la clavícula.",
+    "Duodécima costilla izquierda. Forma parte de la caja torácica.",
+    "Duodécima costilla derecha. Forma parte de la caja torácica.",
+    "Décima costilla izquierda. Conecta con el esternón, ayudando a la expansión torácica.",
+    "Décima costilla derecha. Conecta con el esternón, ayudando a la expansión torácica.",
+    "Escápula izquierda. Conecta los omóplatos con el esternón.",
+    "Escápula derecha. Conecta los omóplatos con el esternón.",
+    "Manubrio del esternón. Conecta las clavículas y las primeras costillas.",
+    "Novena costilla izquierda. Contribuye a la expansión de la caja torácica.",
+    "Novena costilla derecha. Contribuye a la expansión de la caja torácica.",
+    "Octava costilla izquierda. Ayuda a la flexibilidad torácica.",
+    "Octava costilla derecha. Ayuda a la flexibilidad torácica.",
+    "Primera costilla izquierda. Conecta con el esternón y facilita la respiración.",
+    "Primera costilla derecha. Conecta con el esternón y facilita la respiración.",
+    "Proceso xifoides. Se encuentra en la parte inferior del esternón, sirviendo de anclaje para los músculos del abdomen.",
+    "Quinta costilla izquierda. Facilita la expansión torácica.",
+    "Quinta costilla derecha. Facilita la expansión torácica.",
+    "Segunda costilla izquierda. Conecta con el esternón y facilita la respiración.",
+    "Segunda costilla derecha. Conecta con el esternón y facilita la respiración.",
+    "Sexta costilla izquierda. Ayuda a la flexibilidad de la caja torácica.",
+    "Sexta costilla derecha. Ayuda a la flexibilidad de la caja torácica.",
+    "Séptima costilla izquierda. Facilita la expansión torácica.",
+    "Séptima costilla derecha. Facilita la expansión torácica.",
+    "Tercera costilla izquierda. Facilita la flexibilidad torácica.",
+    "Tercera costilla derecha. Facilita la flexibilidad torácica.",
+    "Undécima costilla izquierda. Ayuda a la flexibilidad de la caja torácica.",
+    "Undécima costilla derecha. Ayuda a la flexibilidad de la caja torácica."
         };
 
 
@@ -169,30 +164,36 @@ public class MenuEscapulaController : MonoBehaviour
     {
         bool encontrado = false;
 
-        for (int i = 0; i < huesos.Length; i++)
+        // Iteramos sobre el array de nombres
+        for (int i = 0; i < nombres.Length; i++)
         {
-            if (huesos[i].hueso == huesoSeleccionado)
+            // Comparar el nombre del hueso seleccionado con el array de nombres
+            if (nombres[i] == huesoSeleccionado.name)
             {
                 encontrado = true;
 
-                if (i < nombres.Length && i < descripciones.Length)
-                {
-                    if (tituloTexto) tituloTexto.text = nombres[i];
-                    if (descripcionTexto) descripcionTexto.text = descripciones[i];
-                    Debug.Log($"[MenuEscapulaController] Mostrando información de: {nombres[i]}");
-                }
-                else
-                {
-                    Debug.LogWarning($"[MenuEscapulaController] Índice fuera de rango ({i}) para {huesoSeleccionado.name}.");
-                }
+                // Mostrar el nombre y la descripción correspondiente usando el índice 'i'
+                if (tituloTexto)
+                    tituloTexto.text = nombres[i];  // Muestra el nombre del hueso
 
+                if (descripcionTexto)
+                    descripcionTexto.text = descripciones[i];  // Muestra la descripción correspondiente
+
+                Debug.Log($"[MenuEscapulaController] Mostrando información de: {nombres[i]}");
                 break;
             }
         }
 
         if (!encontrado)
+        {
             Debug.LogWarning($"[MenuEscapulaController] Hueso no encontrado en la lista: {huesoSeleccionado.name}");
+        }
     }
+
+
+
+
+
 
     // ----------------------------------------------------
     public void ResetMenu()
